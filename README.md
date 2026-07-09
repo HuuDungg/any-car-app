@@ -1,7 +1,7 @@
 # AnyCar
 
 <p align="center">
-  <img src="App/Resources/icon@3x.png" width="128" height="128" style="border-radius: 28px;" alt="AnyCar Logo">
+  <img src="App/Resources/logo.png" width="128" height="128" style="border-radius: 28px;" alt="AnyCar Logo">
 </p>
 
 Enable any installed app on the CarPlay screen. A `.deb` tweak that ships a

@@ -1,0 +1,56 @@
+name: Build and Release AnyCar
+
+on:
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: macos-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Setup Theos
+        uses: Randomblock1/theos-action@v1
+        with:
+          theos-src: 'https://github.com/theos/theos'
+          theos-sdks: 'https://github.com/theos/sdks'
+
+      - name: Make Build Script Executable
+        run: chmod +x ./build.sh
+
+      - name: Build Tweak Packages (Rootful & Rootless)
+        run: ./build.sh
+        env:
+          THEOS: ${{ github.workspace }}/theos
+
+      - name: Parse Version
+        id: parse_version
+        run: |
+          VERSION=$(grep "^Version:" control | cut -d' ' -f2)
+          echo "VERSION=$VERSION" >> $GITHUB_OUTPUT
+          echo "Parsed Version: $VERSION"
+
+      - name: Create or Update GitHub Release
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: v${{ steps.parse_version.outputs.VERSION }}
+          name: AnyCar Tweak v${{ steps.parse_version.outputs.VERSION }}
+          body: |
+            Automated build of the AnyCar tweak for iOS.
+            
+            **Included Packages:**
+            - `com.dan9.anycar_${{ steps.parse_version.outputs.VERSION }}_rootful.deb` (Rootful)
+            - `com.dan9.anycar_${{ steps.parse_version.outputs.VERSION }}_rootless.deb` (Rootless)
+            
+            *Compiled using Theos on GitHub Actions.*
+          draft: false
+          prerelease: false
+          files: |
+            packages/*_rootful.deb
+            packages/*_rootless.deb

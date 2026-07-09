@@ -42,16 +42,16 @@ jobs:
           tag_name: v${{ steps.parse_version.outputs.VERSION }}
           name: AnyCar Tweak v${{ steps.parse_version.outputs.VERSION }}
           body: |
-            Open-source tweak giúp mở mọi ứng dụng (Any App) lên màn hình CarPlay.
+            An open-source jailbreak tweak to enable any installed application on Apple CarPlay.
 
-            ### Các chức năng chính (Key Features):
-            - **Bật/Tắt ứng dụng**: Giao diện ứng dụng đi kèm (companion app) trên điện thoại cho phép bật/tắt quyền hiển thị CarPlay cho từng ứng dụng riêng biệt.
-            - **Launcher Grid**: Hiển thị lưới ứng dụng AnyCar trực quan trên màn hình CarPlay của ô tô.
-            - **UI Mirroring (Truyền hình ảnh)**: Sử dụng các API hệ thống (FrontBoard, QuartzCore) để chuyển tiếp hình ảnh hiển thị của ứng dụng trực tiếp lên màn hình ô tô.
-            - **Touch Forwarding (Chuyển tiếp cảm ứng)**: Nhận diện cử chỉ chạm trên màn hình ô tô và truyền tín hiệu cảm ứng (sử dụng IOHIDEvent) về ứng dụng đang chạy trên điện thoại.
-            - **Giao diện hiện đại**: Biểu tượng ứng dụng được thiết kế mới theo phong cách Apple Siri Intelligence tối giản.
+            ### Key Features:
+            - **Enable/Disable Apps**: Toggle CarPlay access for any installed app via the native companion app on your iPhone.
+            - **Launcher Grid**: A clean app grid layout displayed directly on the car display.
+            - **UI Mirroring**: Uses private APIs (FrontBoard, QuartzCore) to remote-render app output onto the CarPlay screen.
+            - **Touch Forwarding**: Translates car screen touch events into IOHIDEvents and routes them back to the active application.
+            - **Modern UI**: Features a newly designed Siri-inspired monogram app icon.
 
-            ### Bản cài đặt (Installation):
+            ### Installation Packages:
             - `com.dan9.anycar_${{ steps.parse_version.outputs.VERSION }}_rootful.deb` (Rootful)
             - `com.dan9.anycar_${{ steps.parse_version.outputs.VERSION }}_rootless.deb` (Rootless)
           draft: false

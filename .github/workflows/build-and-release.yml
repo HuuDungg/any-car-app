@@ -44,12 +44,18 @@ jobs:
           body: |
             An open-source jailbreak tweak to enable any installed application on Apple CarPlay.
 
+            Developed and rebranded entirely by **DAN9** (HuuDungg).
+
             ### Key Features:
             - **Enable/Disable Apps**: Toggle CarPlay access for any installed app via the native companion app on your iPhone.
             - **Launcher Grid**: A clean app grid layout displayed directly on the car display.
             - **UI Mirroring**: Uses private APIs (FrontBoard, QuartzCore) to remote-render app output onto the CarPlay screen.
             - **Touch Forwarding**: Translates car screen touch events into IOHIDEvents and routes them back to the active application.
             - **Modern UI**: Features a newly designed Siri-inspired monogram app icon.
+
+            ### Credits & Acknowledgments:
+            - **Lead Developer**: **DAN9** (HuuDungg)
+            - **Touch Event Injection**: Based on private `IOHIDEvent` headers reverse-engineered by **KennyTM~**.
 
             ### Installation Packages:
             - `com.dan9.anycar_${{ steps.parse_version.outputs.VERSION }}_rootful.deb` (Rootful)

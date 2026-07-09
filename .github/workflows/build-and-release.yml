@@ -56,6 +56,8 @@ jobs:
             ### Credits & Acknowledgments:
             - **Lead Developer**: **DAN9** (HuuDungg)
             - **Touch Event Injection**: Based on private `IOHIDEvent` headers reverse-engineered by **KennyTM~**.
+            - **Build System**: **Theos Team** (for the cross-platform development suite).
+            - **Jailbreak Substrate**: **Saurik** (for Cydia Substrate) & **Ellekit / Substitute Team** (for the modern injection frameworks).
 
             ### Installation Packages:
             - `com.dan9.anycar_${{ steps.parse_version.outputs.VERSION }}_rootful.deb` (Rootful)

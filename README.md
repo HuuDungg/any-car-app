@@ -1,5 +1,9 @@
 # AnyCar
 
+<p align="center">
+  <img src="App/Resources/icon@3x.png" width="128" height="128" style="border-radius: 28px;" alt="AnyCar Logo">
+</p>
+
 Enable any installed app on the CarPlay screen. A `.deb` tweak that ships a
 companion app where you flip a switch per app; enabled apps show up in an
 AnyCar launcher grid on the car display.

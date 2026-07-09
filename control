@@ -1,0 +1,9 @@
+Package: com.dan9.anycar
+Name: AnyCar
+Version: 0.1.0
+Architecture: iphoneos-arm
+Description: Enable any installed app on the CarPlay screen. Ships a companion app to pick which apps show up.
+Maintainer: DAN9
+Author: DAN9
+Section: Tweaks
+Depends: mobilesubstrate, firmware (>= 14.0)

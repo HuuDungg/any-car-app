@@ -1,0 +1,7 @@
+.theos/
+packages/
+*.deb
+*.dylib
+*.plist.xml
+.DS_Store
+/fix_corners.py
